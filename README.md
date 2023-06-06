@@ -6,7 +6,7 @@ A simple warp plugin.
 
 /setwarp [warp name] - Set a warp point\
 /deletewarp [warp name] - Delete a warp point\
-/warp [warp name] - Teleport to a warp point\
+/warp [warp name|reload] - Teleport to a warp point\
 /listwarp - Show a list of all warp points
 
 # Permissions
