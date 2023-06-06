@@ -7,12 +7,14 @@ use CortexPE\Commando\BaseCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
+use wock\SimpleWarps\Commands\SubCommands\ReloadSubCommand;
 use wock\SimpleWarps\Warps;
 
 class WarpCommand extends BaseCommand {
 
     public function prepare(): void
     {
+        $this->registerSubCommand(new ReloadSubCommand("reload"));
         $this->registerArgument(0, new RawStringArgument("warp"));
         $this->setPermission("simplewarps.warp");
         $plugin = $this->getOwningPlugin();
