@@ -1,0 +1,17 @@
+name: SimpleWarps
+main: wock\SimpleWarps\Warps
+api: 5.0.0
+version: 1.0.0
+author: wockgod
+
+
+
+permissions:
+  simplewarps.setwarp:
+    default: op
+  simplewarps.delwarp:
+    default: op
+  simplewarps.warp:
+    default: true
+  simplewarps.listwarps:
+    default: true
