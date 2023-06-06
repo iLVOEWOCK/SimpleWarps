@@ -13,7 +13,7 @@ class DeleteWarpCommand extends BaseCommand {
     public function prepare(): void
     {
         $this->registerArgument(0, new RawStringArgument("warp"));
-        $this->setPermission("simplewarps.delwarp");
+        $this->setPermission("simple_warps.delete_warp");
         $plugin = $this->getOwningPlugin();
         assert($plugin instanceof Warps);
     }
