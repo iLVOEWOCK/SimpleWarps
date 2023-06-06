@@ -11,7 +11,7 @@ class ReloadSubCommand extends BaseSubCommand {
 
     public function prepare(): void
     {
-        $this->setPermission("simplewarps.reload");
+        $this->setPermission("simple_warps.reload");
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args): void {
