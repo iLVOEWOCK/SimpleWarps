@@ -14,4 +14,10 @@ A simple warp plugin.
 `simplewarps.setwarp`\
 `simplewarps.delwarp`\
 `simplewarps.warp`\
-`simplewarps.listwarps`
+`simplewarps.listwarps`\
+`simplewarps.reload`
+
+# Usage
+
+Requires Commando (Pocketmine 5)\
+Requires SimplePacketHandler
