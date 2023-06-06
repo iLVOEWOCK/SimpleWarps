@@ -1,6 +1,10 @@
 # Simple Warps
 
 A simple warp plugin.
+[![](https://poggit.pmmp.io/shield.state/SimpleWarps)](https://poggit.pmmp.io/p/SimpleWarps)
+<a href="https://poggit.pmmp.io/p/SimpleWarps"><img src="https://poggit.pmmp.io/shield.state/SimpleWarps"></a> [![](https://poggit.pmmp.io/shield.api/SimpleWarps)](https://poggit.pmmp.io/p/SimpleWarps)
+<a href="https://poggit.pmmp.io/p/SimpleWarps"><img src="https://poggit.pmmp.io/shield.api/SimpleWarps"></a>
+
 
 # Commands
 
