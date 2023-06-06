@@ -2,6 +2,7 @@
 
 namespace wock\SimpleWarps;
 
+use JsonException;
 use pocketmine\math\Vector3;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
@@ -9,10 +10,10 @@ use pocketmine\world\Position;
 class WarpManager
 {
     /** @var string */
-    private $dataFile;
+    private string $dataFile;
 
     /** @var array */
-    private $warps;
+    private array $warps;
 
     public function __construct(string $dataFile)
     {
@@ -26,6 +27,9 @@ class WarpManager
         $this->warps = $config->get("warps", []);
     }
 
+    /**
+     * @throws JsonException
+     */
     public function saveWarps(): void
     {
         $config = new Config($this->dataFile, Config::YAML);
@@ -51,15 +55,6 @@ class WarpManager
         return false;
     }
 
-    public function getWarpPosition(string $name): ?Position
-    {
-        if ($this->warpExists($name)) {
-            $data = $this->warps[$name];
-            return $this->arrayToPosition($data);
-        }
-        return null;
-    }
-
     public function warpExists(string $name): bool
     {
         return isset($this->warps[$name]);
@@ -73,17 +68,6 @@ class WarpManager
             "z" => $position->getZ(),
             "level" => $position->getWorld()->getFolderName()
         ];
-    }
-
-    public function arrayToPosition(array $data): Position
-    {
-        $x = $data["x"];
-        $y = $data["y"];
-        $z = $data["z"];
-        $level = $data["level"];
-        // You may need to fetch the Level object based on the level name if it's not already loaded
-        $position = new Position($x, $y, $z, $level);
-        return $position;
     }
 
     public function getWarp(string $warpName): ?Warps
