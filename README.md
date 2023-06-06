@@ -1,4 +1,4 @@
-# SimpleWarps
+# Simple Warps
 
 A simple warp plugin.
 
