@@ -14,7 +14,7 @@ class SetWarpCommand extends BaseCommand {
     public function prepare(): void
     {
         $this->registerArgument(0, new RawStringArgument("warp"));
-        $this->setPermission("simplewarps.setwarp");
+        $this->setPermission("simple_warps.set_warp");
         $plugin = $this->getOwningPlugin();
         assert($plugin instanceof Warps);
     }
