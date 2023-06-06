@@ -16,7 +16,7 @@ class WarpCommand extends BaseCommand {
     {
         $this->registerSubCommand(new ReloadSubCommand("reload"));
         $this->registerArgument(0, new RawStringArgument("warp"));
-        $this->setPermission("simplewarps.warp");
+        $this->setPermission("simple_warps.warp");
         $plugin = $this->getOwningPlugin();
         assert($plugin instanceof Warps);
     }
