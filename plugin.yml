@@ -4,8 +4,6 @@ api: 5.0.0
 version: 1.0.0
 author: wockgod
 
-
-
 permissions:
   simplewarps.setwarp:
     default: op
@@ -15,3 +13,5 @@ permissions:
     default: true
   simplewarps.listwarps:
     default: true
+  simplewarps.reload:
+    default: op
