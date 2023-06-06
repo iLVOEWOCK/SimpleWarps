@@ -5,13 +5,13 @@ version: 1.0.0
 author: wockgod
 
 permissions:
-  simplewarps.setwarp:
+  simple_warps.set_warp:
     default: op
-  simplewarps.delwarp:
+  simple_warps.delete_warp:
     default: op
-  simplewarps.warp:
+  simple_warps.warp:
     default: true
-  simplewarps.listwarps:
+  simple_warps.list_warps:
     default: true
-  simplewarps.reload:
+  simple_warps.reload:
     default: op
