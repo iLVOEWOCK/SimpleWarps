@@ -1,0 +1,13 @@
+# Configure all the messages in this plugin. Use '&' for color codes
+warp_not_exist: "&cThe specified warp '{WARP.NAME}' does not exist."
+error_retrieving_position: "&cAn error occurred while retrieving the warp position."
+teleported_to_warp: "&aTeleported to the '{WARP.NAME}' warp."
+warp_exists: "&cA warp with that name already exists."
+warp_set: "&aSuccessfully set the warp '{WARP.NAME}' to your location!"
+no_warps_available: "&cThere are no warps available."
+existing_warps: "&aExisting Warps:"
+warp_names: "{WARP.NAMES}"
+warp_deleted: "&aThe warp '{WARP.NAME}' has been deleted."
+
+
+in_game_usage: "&cThis command can only be used in-game."
