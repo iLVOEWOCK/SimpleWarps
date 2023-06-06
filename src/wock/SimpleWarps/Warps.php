@@ -2,6 +2,8 @@
 
 namespace wock\SimpleWarps;
 
+use CortexPE\Commando\exception\HookAlreadyRegistered;
+use CortexPE\Commando\PacketHooker;
 use pocketmine\plugin\PluginBase;
 use wock\SimpleWarps\Commands\DeleteWarpCommand;
 use wock\SimpleWarps\Commands\ListWarpsCommand;
@@ -10,12 +12,14 @@ use wock\SimpleWarps\Commands\WarpCommand;
 
 class Warps extends PluginBase {
 
-    /** @var Warps */
-    private static $instance = null;
+    private static ?Warps $instance = null;
 
     /** @var WarpManager */
-    public $warpManager;
+    public WarpManager $warpManager;
 
+    /**
+     * @throws HookAlreadyRegistered
+     */
     public function onEnable(): void
     {
         $this->saveDefaultConfig();
@@ -23,7 +27,9 @@ class Warps extends PluginBase {
         $this->warpManager->loadWarps();
         self::$instance = $this;
         $this->registerCommands();
-    }
+        if(!PacketHooker::isRegistered()) {
+            PacketHooker::register($this);
+        }    }
 
     public function onDisable(): void
     {
@@ -31,13 +37,13 @@ class Warps extends PluginBase {
     }
 
     public function registerCommands(){
-        $commandmap = $this->getServer()->getCommandMap();
+        $command_Map = $this->getServer()->getCommandMap();
 
-        $commandmap->registerAll("simplewarps", [
+        $command_Map->registerAll("simple_warps", [
             new SetWarpCommand($this, "setwarp", "Create a new warp"),
             new WarpCommand($this, "warp", "Teleport to a server warp"),
             new ListWarpsCommand($this, "listwarps", "List all existing warps on the server", ["warps"]),
-            new DeleteWarpCommand($this, "deletewarp", "Delete an existing warp", ["delwarp", "rmwarp", "removeawarp"])
+            new DeleteWarpCommand($this, "deletewarp", "Delete an existing warp", ["delwarp", "rmwarp", "removewarp"])
         ]);
     }
 
