@@ -11,7 +11,7 @@ class ListWarpsCommand extends BaseCommand {
 
     public function prepare(): void
     {
-        $this->setPermission("simplewarps.listwarps");
+        $this->setPermission("simple_warps.list_warps");
         $plugin = $this->getOwningPlugin();
         assert($plugin instanceof Warps);
     }
